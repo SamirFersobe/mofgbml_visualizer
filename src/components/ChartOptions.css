@@ -1,0 +1,14 @@
+.dropdowns{
+    display: inline flex;
+    flex-direction: row;
+    background-color: lightskyblue;
+    padding: 2.5em;
+    
+}
+
+.divider{
+    background-color: grey;
+    width: 50em;
+    display: inline flex;
+    flex-direction: row;
+}

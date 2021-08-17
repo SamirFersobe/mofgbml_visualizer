@@ -1,38 +1,40 @@
 
 .datasetsDisplay{
-    background-color: darkgrey;
+    background-color:white;
     position: relative;
+	
+	flex-direction: row-reverse;
     width: 100%;
     height: 10em;
-    padding: 20px;
-    padding-right: 50px;
-    
+    padding: 10px 20px 10px 20px;
+	/* background-image:
+	linear-gradient(to bottom,
+	  rgba(240, 255, 40, 1) 0%,
+	  rgba(240, 255, 40, 1) 100%),
+	linear-gradient(to bottom,
+	  rgba(240, 40, 40, 1) 0%,
+	  rgba(240, 40, 40, 1) 100%);
+  background-clip: content-box, padding-box; */
 
 }
 
 .myButton {
-	box-shadow: 0px 0px 0px 2px #9fb4f2;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
-	background-color:#7892c2;
-	
-	position:relative;
-	border:1px solid #4e6096;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:sans-serif;
-	font-size:21px;
-	padding:6px 20px;
-	
-    margin:6px;
+ display:inline-flex;
+ margin: 10px 10px 10px 10px;
+ 
+ position: relative;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-	background-color:#476e9e;
+	
+	background-color:lightgray;
 }
 .myButton:active {
 	position:relative;
+	background-color:white;
 	top:2px;
 }
 
+.myButton:focus {
+	background-color:white;
+}
         
