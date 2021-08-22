@@ -2,13 +2,13 @@
     display: inline flex;
     flex-direction: row;
     background-color: lightskyblue;
-    padding: 2.5em;
+    padding: 1em;
+    margin-top: 2em;
     
 }
 
-.divider{
-    background-color: grey;
-    width: 50em;
-    display: inline flex;
-    flex-direction: row;
+.dropdown-button{
+    margin: 1em 0 1em 0;
+    padding:1em 1em 1em 1em;
+    
 }

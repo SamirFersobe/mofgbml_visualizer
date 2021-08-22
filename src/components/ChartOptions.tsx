@@ -1,5 +1,9 @@
-import { DropdownButton,Dropdown,Button } from "react-bootstrap"
+import {Button,Row,Col,Container } from "react-bootstrap"
 import './ChartOptions.css';
+import DropdownOptions from "./DropdownOptions";
+import { useState,useEffect } from "react";
+
+//Values for the Dropdown Buttons
 
 const validation_rates =['0.9','0.8','0.7','0.5','0.3','0.2','0.1']
 const  MOP = ['MOP1','MOP7']
@@ -10,24 +14,25 @@ const values = ['Dtra','Dsubtra','Dvalid','Dtst']
 
 export default function ChartOptions() {
     return (
-        <div className="divider">
+        
             <div className="dropdowns">
-            <DropdownButton id="dropdown-basic-button" title="Validation Rate">
-                {validation_rates.map((valid) => (
-                <Dropdown.Item href="">{valid}</Dropdown.Item>))}
-            </DropdownButton>
-           
-                <br></br>
-            <DropdownButton id="dropdown-basic-button" title="Sub-Dataset">
-                {values.map((value) => (
-                <Dropdown.Item href="">{value}</Dropdown.Item>))}
-            </DropdownButton>
+            <Container>
+            <h2 id="currentDataset">CurrentDataset</h2>
+            <DropdownOptions buttonName = {"Validation Rate"} content={validation_rates}/>
+            <DropdownOptions buttonName = {"Objective"} content={values}/>
+            <DropdownOptions buttonName = {"Cross-Validation"} content={crossvalidation}/>
+            <DropdownOptions buttonName = {"MOP"} content={MOP}/>
+                   
+            <Row>
+            <Button className="dropdown-button" variant="primary"> Add </Button>   
+            </Row> 
+
+            <Row>
+            <Button className="dropdown-button" variant="danger">Clear All </Button>   
+            </Row>
+
+            </Container>
             </div>
-           <div>
-            
-           <Button variant="primary"> Add </Button>   
-            </div>    
-            
-        </div>
+        
     )
 }

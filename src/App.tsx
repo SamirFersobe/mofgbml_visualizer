@@ -5,25 +5,30 @@ import DatasetsDisplay from './components/DatasetsDisplay';
 import ChartOptions from './components/ChartOptions';
 
 import './App.css';
-import { Container } from 'react-bootstrap';
+import { Container,Row,Col} from 'react-bootstrap';
 
+const data:string[] =['iris','pima','vehicle','australian','wine','newthyroid','satimage','iris','pima','vehicle','australian','wine','newthyroid','satimage','iris','pima','vehicle','australian','wine','newthyroid'];
 function App() {
   return (
-    <div>
-      <h1> Charts for MoFGBML</h1>
-      
-      <DatasetsDisplay />
-      <div className="container-fluid h-100">
-        <div className="row justify-content-center">
-        <div className="col-9">
+    <Container>
+      <Row className="justify-content-center">
+      <Col xl="5">
+      <h1 className="app"> Charts for MoFGBML</h1>
+      </Col>
+      </Row>
+      <DatasetsDisplay datasets={data} />
+      <Container>
+       
+        <Row className="justify-content-center">
+        <Col md={8}>
           <ScatterPlot />
-        </div>
-        <div className ="col-3">
+        </Col>
+        <Col md={4}>
           <ChartOptions />
-        </div>
-        </div>
-      </div>
-    </div>
+        </Col>
+        </Row>
+      </Container>
+    </Container>
   );
 }
 
