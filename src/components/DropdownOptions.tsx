@@ -21,8 +21,7 @@ function DropdownOptions({buttonName,content,currentVal,updateFunction}:Dropdown
         <Col>
         <DropdownButton className="dropdown-button" id="dropdown-basic-button" title={currentVal}>
             {content.map((i) =>(
-                //@ts-ignore
-            <Dropdown.Item onClick={()=>updateFunction(i)} value={i}>{i}</Dropdown.Item>))}
+            <Dropdown.Item  onClick={()=>updateFunction(i)} value={i}>{i}</Dropdown.Item>))}
         </DropdownButton>
         </Col>
         

@@ -25,7 +25,7 @@ function DatasetsDisplay({datasets}:DatasetsDisplay) {
         if(e.button == 0){
             //@ts-ignore
             setCurrentDataset(e.currentTarget.value)
-            // console.log(e.currentTarget.value)
+            
         }
         
     }
