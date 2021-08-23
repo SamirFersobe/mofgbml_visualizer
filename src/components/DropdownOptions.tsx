@@ -6,41 +6,31 @@ import PropTypes from 'prop-types';
 export interface DropdownOptionsProps{
     buttonName:string;
     content:string[];
+    currentVal:string;
+    updateFunction(source:string):any;
 }
 
-export interface CurrentItemDescription{
-    description:string;
-}
 
-function DropdownOptions({buttonName,content}:DropdownOptionsProps) {
-
-    const [currentDescription,setCurrentDescription] = useState(content[0])
+function DropdownOptions({buttonName,content,currentVal,updateFunction}:DropdownOptionsProps) {
 
     return (
         <Row md={2}>
-        
         <Col>
-        
-        <DropdownButton className="dropdown-button" id="dropdown-basic-button" title={buttonName}>
+        <p className="dropdown-button"> {buttonName} </p>
+        </Col>
+        <Col>
+        <DropdownButton className="dropdown-button" id="dropdown-basic-button" title={currentVal}>
             {content.map((i) =>(
                 //@ts-ignore
-            <Dropdown.Item onClick={console.log("hi")} value={i}>{i}</Dropdown.Item>))}
+            <Dropdown.Item onClick={()=>updateFunction(i)} value={i}>{i}</Dropdown.Item>))}
         </DropdownButton>
         </Col>
-        <Col>
-        <CurrentItemDescription description={currentDescription} />
-        </Col>
+        
     </Row>
     )
 }
 
 
-
-function CurrentItemDescription({description}:CurrentItemDescription){
-        return (
-            <p className="dropdown-button"> {description} </p>
-        )
-}
 
 
 export default DropdownOptions

@@ -10,5 +10,8 @@
 .dropdown-button{
     margin: 1em 0 1em 0;
     padding:1em 1em 1em 1em;
+    font-size: medium;
+    font-weight: bold;
+    font-size: 18px;
     
 }

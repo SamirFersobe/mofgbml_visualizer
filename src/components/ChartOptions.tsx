@@ -8,23 +8,28 @@ import { useState,useEffect } from "react";
 const validation_rates =['0.9','0.8','0.7','0.5','0.3','0.2','0.1']
 const  MOP = ['MOP1','MOP7']
 const crossvalidation = ['SCV','DOBSCV']
-const values = ['Dtra','Dsubtra','Dvalid','Dtst']
+const objectives = ['Dtra','Dsubtra','Dvalid','Dtst']
 
 
 
 export default function ChartOptions() {
+    const [currentValid,setValid] = useState(validation_rates[0]);
+    const [currentMOP,setMOP] = useState(MOP[0]);
+    const [currentCV,setCV] =useState(crossvalidation[0]);
+    const [currentObjective,setObjective] = useState(objectives[0]);
+    
     return (
-        
+
             <div className="dropdowns">
             <Container>
             <h2 id="currentDataset">CurrentDataset</h2>
-            <DropdownOptions buttonName = {"Validation Rate"} content={validation_rates}/>
-            <DropdownOptions buttonName = {"Objective"} content={values}/>
-            <DropdownOptions buttonName = {"Cross-Validation"} content={crossvalidation}/>
-            <DropdownOptions buttonName = {"MOP"} content={MOP}/>
+            <DropdownOptions buttonName = {"Validation Rate"} content={validation_rates} currentVal = {currentValid} updateFunction = {setValid} />
+            <DropdownOptions buttonName = {"Objective"} content={objectives} currentVal = {currentObjective} updateFunction = {setObjective} />
+            <DropdownOptions buttonName = {"Cross-Validation"} content={crossvalidation} currentVal={currentCV} updateFunction = {setCV} />
+            <DropdownOptions buttonName = {"MOP"} content={MOP} currentVal={currentMOP} updateFunction = {setMOP} />
                    
             <Row>
-            <Button className="dropdown-button" variant="primary"> Add </Button>   
+            <Button onClick={()=>console.log(currentValid)} className="dropdown-button" variant="primary"> Add </Button>   
             </Row> 
 
             <Row>
