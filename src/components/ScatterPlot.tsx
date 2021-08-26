@@ -1,12 +1,15 @@
 
 import './ScatterPlot.css';
 import {Scatter} from 'react-chartjs-2'
-import { useState,useContext } from 'react';
 import { Coordinate } from 'recharts/types/util/types';
 
 
 export interface ScatterPlot{
-  chartData:dataset
+  chartData:data,
+}
+
+export interface data{
+  datasets:dataset[]
 }
 
 export interface dataset{

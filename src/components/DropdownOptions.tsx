@@ -1,6 +1,5 @@
-import React, {useState,useEffect} from 'react'
 import {Row,Col,DropdownButton,Dropdown} from "react-bootstrap";
-import PropTypes from 'prop-types';
+
 
 
 export interface DropdownOptionsProps{
@@ -21,7 +20,7 @@ function DropdownOptions({buttonName,content,currentVal,updateFunction}:Dropdown
         <Col>
         <DropdownButton className="dropdown-button" id="dropdown-basic-button" title={currentVal}>
             {content.map((i) =>(
-            <Dropdown.Item  onClick={()=>updateFunction(i)} value={i}>{i}</Dropdown.Item>))}
+            <Dropdown.Item  key={i} onClick={()=>updateFunction(i)} value={i}>{i}</Dropdown.Item>))}
         </DropdownButton>
         </Col>
         

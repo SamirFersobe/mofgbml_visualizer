@@ -1,4 +1,4 @@
-import React from 'react';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ScatterPlot from './components/ScatterPlot';
 import DatasetsDisplay from './components/DatasetsDisplay';
@@ -8,7 +8,7 @@ import { Coordinate } from 'recharts/types/util/types';
 import './App.css';
 import { Container,Row,Col} from 'react-bootstrap';
 
-const datasetData:string[] =['iris','pima','vehicle','australian','wine','newthyroid','satimage','iris','pima','vehicle','australian','wine','newthyroid','satimage','iris','pima','vehicle','australian','wine','newthyroid'];
+const datasetData:string[] =['iris','pima','vehicle','australian','wine'];
 function App() {
 
   const customdata = require('./data/australian_gen5000_MOP7at5_Dtst.json');
@@ -69,7 +69,11 @@ function jsonToData(json:JSON){
        
         <Row className="justify-content-center">
         <Col md={8}>
-          <ScatterPlot chartData={chartData} />
+          
+          <ScatterPlot 
+          chartData={chartData} 
+          />
+
         </Col>
         <Col md={4}>
           <ChartOptions updateFunction={setData} chartData ={chartData} />

@@ -13,7 +13,7 @@ function DatasetsDisplay({datasets}:DatasetsDisplay) {
 
     useEffect(() => {
         document.title = currentDataset;
-        if(document.getElementById("currentDataset") != null || document.getElementById("currentDataset") != undefined){
+        if(document.getElementById("currentDataset") !== null || document.getElementById("currentDataset") !== undefined){
         document.getElementById("currentDataset")!.innerHTML = currentDataset;
         }
         
@@ -22,7 +22,7 @@ function DatasetsDisplay({datasets}:DatasetsDisplay) {
 
     function submit(e:React.MouseEvent<HTMLElement>){
         e.preventDefault();
-        if(e.button == 0){
+        if(e.button === 0){
             //@ts-ignore
             setCurrentDataset(e.currentTarget.value)
             
@@ -30,7 +30,7 @@ function DatasetsDisplay({datasets}:DatasetsDisplay) {
         
     }
     // Defined inside the DatasetsDisplay() to access the local submit function
-    const datasetItems = datasets.map((dataset) => <Button  onClick ={submit} variant="info"  className="myButton" value={dataset}> {dataset}</Button>);
+    const datasetItems = datasets.map((dataset) => <Button   key = {dataset} onClick ={submit} variant="info"  className="myButton" value={dataset}> {dataset}</Button>);
 
     return (
         <div className="datasetsDisplay">
