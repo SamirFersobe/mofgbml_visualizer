@@ -28,15 +28,20 @@ function jsonToData(json:JSON){
     return data
   }
 
+//preset to showcase somedata constantly TODO: Obtain a lot of data async 
+function preset(dataset:string){
+
+}
 //update function is the useState hook that is passed down from App.tsx and is used as a callback function
 function addNewData(oldData:data,datasetName:string,validationRate:string,mop:string,objective:string,color:string,updateFunction:any){
     let subrate = 10-Math.round(parseFloat(validationRate)*10)
     let jsonName:string = `${datasetName}_gen5000_${mop}at${subrate.toString(10)}_${objective}`
-    let url:string = `/api/${jsonName}`
+    let url:string = `https://mofgbml-visualizer.herokuapp.com/api/${jsonName}`
    
-    const request = async()=>{
-      const response = await fetch(url)
-      const dataPoints = await response.json()
+    //function of request
+    const request = async()=>{ //async function so that we can return the data after it's loaded
+      const response = await fetch(url) // response from server after fetching
+      const dataPoints = await response.json() // turning it into json data
       try{
         let newData ={
           datasets:[
@@ -57,7 +62,7 @@ function addNewData(oldData:data,datasetName:string,validationRate:string,mop:st
       };
       
       updatedData.datasets = oldData.datasets.concat(newData.datasets) 
-      updateFunction(updatedData);
+      updateFunction(updatedData); //using the callback updatefunction when we finally obtain the data
   
       }catch(e){
           console.log(e)

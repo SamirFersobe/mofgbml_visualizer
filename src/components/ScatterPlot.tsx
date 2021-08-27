@@ -30,6 +30,43 @@ const ScatterPlot = ({chartData}:ScatterPlot) => {
     options ={{
         maintainAspectRatio:false,
         aspectRatio:1,
+        scales:{
+          x:{
+            display:true,
+            min:0,
+            
+            title:{
+              display:true,
+              text:'Number of Rules',
+              color:'#000',
+              font:{
+                family:'Arial',
+                size: 20,
+                weight:'bold',
+                lineHeight:1.2
+              }
+            }
+
+          },
+          y:{
+            display:true,
+            min:0,
+            
+            title:{
+              display:true,
+              text:'Error Rate(%)',
+              color:'#000',
+              font:{
+                family:'Arial',
+                size:20,
+                weight:'bold',
+                lineHeight:1.2
+              }
+            }
+
+          }
+          
+        }
     }}
      
     
