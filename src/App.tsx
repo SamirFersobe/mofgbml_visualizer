@@ -9,6 +9,8 @@ import './App.css';
 import { Container,Row,Col} from 'react-bootstrap';
 
 const datasetData:string[] =['iris','pima','vehicle','australian','wine'];
+
+
 function App() {
 
   const customdata = require('./data/australian_gen5000_MOP7at5_Dtst.json');
@@ -55,6 +57,7 @@ function jsonToData(json:JSON){
     
   };
 
+  const [currentDataset,setDataset] = useState(datasetData[0])
   const [chartData,setData] = useState(initialData)
 
   return (
@@ -64,7 +67,7 @@ function jsonToData(json:JSON){
       <h1 className="app"> Charts for MoFGBML</h1>
       </Col>
       </Row>
-      <DatasetsDisplay datasets={datasetData} />
+      <DatasetsDisplay datasets={datasetData} currentDataset ={currentDataset} updateFunction={setDataset} />
       <Container>
        
         <Row className="justify-content-center">
@@ -76,7 +79,7 @@ function jsonToData(json:JSON){
 
         </Col>
         <Col md={4}>
-          <ChartOptions updateFunction={setData} chartData ={chartData} />
+          <ChartOptions updateFunction={setData} chartData ={chartData} currentDataset={currentDataset} />
         </Col>
         </Row>
       </Container>

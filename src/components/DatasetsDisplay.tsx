@@ -4,12 +4,14 @@ import { Button } from 'react-bootstrap';
 
 export interface DatasetsDisplay{
     datasets:string[];
+    updateFunction:any;
+    currentDataset:string;
 }
 
 
-function DatasetsDisplay({datasets}:DatasetsDisplay) {
+function DatasetsDisplay({datasets,currentDataset,updateFunction}:DatasetsDisplay) {
     
-    const [currentDataset,setCurrentDataset] =useState("iris")
+    
 
     useEffect(() => {
         document.title = currentDataset;
@@ -24,7 +26,7 @@ function DatasetsDisplay({datasets}:DatasetsDisplay) {
         e.preventDefault();
         if(e.button === 0){
             //@ts-ignore
-            setCurrentDataset(e.currentTarget.value)
+            updateFunction(e.currentTarget.value)
             
         }
         
