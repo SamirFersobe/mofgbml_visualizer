@@ -4,16 +4,14 @@ import ScatterPlot from './components/ScatterPlot';
 import DatasetsDisplay from './components/DatasetsDisplay';
 import ChartOptions from './components/ChartOptions';
 import {useState} from 'react';
-import { Coordinate } from 'recharts/types/util/types';
 import './App.css';
 import { Container,Row,Col} from 'react-bootstrap';
+import { useEffect } from 'react';
 
 const datasetData:string[] =["australian","iris","magic","newthyroid","page-blocks","penbased","phoneme","pima","sonar","vehicle","wine"];
 
 
 function App() {
-
-
 
   const initialData = {
     datasets: [],
@@ -23,6 +21,10 @@ function App() {
   const [currentDataset,setDataset] = useState(datasetData[0])
   const [chartData,setData] = useState(initialData)
 
+  useEffect(()=>{
+    console.log("rendering again")
+  },[chartData])
+
   return (
     <Container>
       <Row className="justify-content-center">
@@ -30,7 +32,7 @@ function App() {
       <h1 className="app"> Charts for MoFGBML</h1>
       </Col>
       </Row>
-      <DatasetsDisplay datasets={datasetData} currentDataset ={currentDataset} updateFunction={setDataset} />
+      <DatasetsDisplay datasets={datasetData} currentDataset ={currentDataset} updateCurrentDataset={setDataset} updateChart ={setData} />
       <Container>
        
         <Row className="justify-content-center">

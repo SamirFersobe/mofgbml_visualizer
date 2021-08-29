@@ -50,7 +50,7 @@ const ScatterPlot = ({chartData}:ScatterPlot) => {
           },
           y:{
             display:true,
-            min:0,
+            
             
             title:{
               display:true,
