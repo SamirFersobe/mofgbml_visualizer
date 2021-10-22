@@ -1,4 +1,4 @@
-# MultiObjective Fuzzy Genetics-based Machine Learning(MOoFGBML) Visualize
+# MultiObjective Fuzzy Genetics-based Machine Learning(MoFGBML) Visualize
 
 
 MoFGBML is a machine learning algorithm which generates fuzzy classifiers which are able to classify the data using fuzzy rules.
