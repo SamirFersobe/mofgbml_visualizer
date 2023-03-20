@@ -30,6 +30,7 @@ function App() {
       <Row className="justify-content-center">
       <Col xl="5">
       <h1 className="app"> Charts for MoFGBML</h1>
+        <h3> Heroku changed their free offering so currently the nodejs backend is unreachable, I'll update soon.</h3>
       </Col>
       </Row>
       <DatasetsDisplay datasets={datasetData} currentDataset ={currentDataset} updateCurrentDataset={setDataset} updateChart ={setData} />
