@@ -12,7 +12,7 @@ const objectives = ['Dtra','Dtst','Dvalid','Dsubtra']
 const mop1objectives = ['Dtra','Dtst']
 const colors = ['green','yellow','blue','red','purple','orange','aqua','black']
 
-
+const domain = "https://mofgbml-visualizer.herokuapp.com/api/"
 export interface ChartOptions{
   updateFunction:any,
   chartData:data,
@@ -50,8 +50,8 @@ function jsonToData(json:JSON){
 function compareToMop1(oldData:data,dataset:string,updateFunction:any){
 
 
-  let urls = [`https://mofgbml-visualizer.herokuapp.com/api/${dataset}_gen5000_MOP1at5_Dtra`,
-              `https://mofgbml-visualizer.herokuapp.com/api/${dataset}_gen5000_MOP1at5_Dtst`]
+  let urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtra`,
+              `${domain}${dataset}_gen5000_MOP1at5_Dtst`]
   let titles = [`${dataset} MOP1 Training Data`,`${dataset} MOP1 Test Data`];
   
 
@@ -101,13 +101,13 @@ function compareDtra(dataset:string,updateFunction:any,objective:string){
   let urls = ["",""];
   let titles = ["",""]
   if(objective === 'Dtra'){
-     urls = [`https://mofgbml-visualizer.herokuapp.com/api/${dataset}_gen5000_MOP1at5_Dtra`,
-              `https://mofgbml-visualizer.herokuapp.com/api/${dataset}_gen5000_MOP7at5_Dtra`]
+     urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtra`,
+              `${domain}${dataset}_gen5000_MOP7at5_Dtra`]
      titles = [`${dataset} MOP1 Training Data`,`${dataset} MOP7 Training Data`];
   }
   else{
-    urls = [`https://mofgbml-visualizer.herokuapp.com/api/${dataset}_gen5000_MOP1at5_Dtst`,
-              `https://mofgbml-visualizer.herokuapp.com/api/${dataset}_gen5000_MOP7at5_Dtst`]
+    urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtst`,
+              `${domain}${dataset}_gen5000_MOP7at5_Dtst`]
     titles = [`${dataset} MOP1 Test Data`,`${dataset} MOP7 Test Data`]
   }
   const request  =  async()=>{
@@ -152,8 +152,8 @@ function compareDtra(dataset:string,updateFunction:any,objective:string){
 
 //preset to showcase somedata constantly TODO: Obtain a lot of data async 
 export function preset(dataset:string,updateFunction:any){
-  let urls = [`https://mofgbml-visualizer.herokuapp.com/api/${dataset}_gen5000_MOP1at5_Dtra`,
-              `https://mofgbml-visualizer.herokuapp.com/api/${dataset}_gen5000_MOP1at5_Dtst`]
+  let urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtra`,
+              `${domain}${dataset}_gen5000_MOP1at5_Dtst`]
   
   const request  =  async()=>{
     const response1 =  await fetch(urls[0])
@@ -199,7 +199,7 @@ export function preset(dataset:string,updateFunction:any){
 function addNewData(oldData:data,datasetName:string,validationRate:string,mop:string,objective:string,color:string,updateFunction:any){
     let subrate = 10-Math.round(parseFloat(validationRate)*10)
     let jsonName:string = `${datasetName}_gen5000_${mop}at${subrate.toString(10)}_${objective}`
-    let url:string = `https://mofgbml-visualizer.herokuapp.com/api/${jsonName}`
+    let url:string = `${domain}${jsonName}`
    
     //function of request
     const request = async()=>{ //async function so that we can return the data after it's loaded
