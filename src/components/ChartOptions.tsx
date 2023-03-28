@@ -12,7 +12,7 @@ const objectives = ['Dtra','Dtst','Dvalid','Dsubtra']
 const mop1objectives = ['Dtra','Dtst']
 const colors = ['green','yellow','blue','red','purple','orange','aqua','black']
 
-const domain = "https://mofgbml-visualizer.herokuapp.com/api/"
+const domain = "https://data.samirfersobe.com/api/"
 export interface ChartOptions{
   updateFunction:any,
   chartData:data,
