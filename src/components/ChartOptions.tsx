@@ -11,7 +11,7 @@ const crossvalidation = ['SCV','DOBSCV']
 const objectives = ['Dtra','Dtst','Dvalid','Dsubtra']
 const mop1objectives = ['Dtra','Dtst']
 const colors = ['green','yellow','blue','red','purple','orange','aqua','black']
-
+// current domain where we hold the data
 const domain = "https://data.samirfersobe.com/api/"
 export interface ChartOptions{
   updateFunction:any,
