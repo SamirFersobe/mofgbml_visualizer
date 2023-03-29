@@ -12,7 +12,7 @@ const objectives = ['Dtra','Dtst','Dvalid','Dsubtra']
 const mop1objectives = ['Dtra','Dtst']
 const colors = ['green','yellow','blue','red','purple','orange','aqua','black']
 // current domain where we hold the data
-const domain = "https://data.samirfersobe.com/api/"
+const domain = "http://data.samirfersobe.com/"
 export interface ChartOptions{
   updateFunction:any,
   chartData:data,
