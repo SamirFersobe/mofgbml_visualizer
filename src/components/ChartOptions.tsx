@@ -12,7 +12,7 @@ const objectives = ['Dtra','Dtst','Dvalid','Dsubtra']
 const mop1objectives = ['Dtra','Dtst']
 const colors = ['green','yellow','blue','red','purple','orange','aqua','black']
 // current domain where we hold the data
-const domain = "http://data.samirfersobe.com/"
+const domain = "https://data.samirfersobe.com/"
 export interface ChartOptions{
   updateFunction:any,
   chartData:data,
@@ -198,7 +198,7 @@ export function preset(dataset:string,updateFunction:any){
 //update function is the useState hook that is passed down from App.tsx and is used as a callback function
 function addNewData(oldData:data,datasetName:string,validationRate:string,mop:string,objective:string,color:string,updateFunction:any){
     let subrate = 10-Math.round(parseFloat(validationRate)*10)
-    let jsonName:string = `${datasetName}_gen5000_${mop}at${subrate.toString(10)}_${objective}`
+    let jsonName:string = `${datasetName}_gen5000_${mop}at${subrate.toString(10)}_${objective}.json`
     let url:string = `${domain}${jsonName}`
    
     //function of request
