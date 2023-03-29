@@ -50,8 +50,8 @@ function jsonToData(json:JSON){
 function compareToMop1(oldData:data,dataset:string,updateFunction:any){
 
 
-  let urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtra`,
-              `${domain}${dataset}_gen5000_MOP1at5_Dtst`]
+  let urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtra.json`,
+              `${domain}${dataset}_gen5000_MOP1at5_Dtst.json`]
   let titles = [`${dataset} MOP1 Training Data`,`${dataset} MOP1 Test Data`];
   
 
@@ -101,13 +101,13 @@ function compareDtra(dataset:string,updateFunction:any,objective:string){
   let urls = ["",""];
   let titles = ["",""]
   if(objective === 'Dtra'){
-     urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtra`,
-              `${domain}${dataset}_gen5000_MOP7at5_Dtra`]
+     urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtra.json`,
+              `${domain}${dataset}_gen5000_MOP7at5_Dtra.json`]
      titles = [`${dataset} MOP1 Training Data`,`${dataset} MOP7 Training Data`];
   }
   else{
-    urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtst`,
-              `${domain}${dataset}_gen5000_MOP7at5_Dtst`]
+    urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtst.json`,
+              `${domain}${dataset}_gen5000_MOP7at5_Dtst.json`]
     titles = [`${dataset} MOP1 Test Data`,`${dataset} MOP7 Test Data`]
   }
   const request  =  async()=>{
@@ -152,8 +152,8 @@ function compareDtra(dataset:string,updateFunction:any,objective:string){
 
 //preset to showcase somedata constantly TODO: Obtain a lot of data async 
 export function preset(dataset:string,updateFunction:any){
-  let urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtra`,
-              `${domain}${dataset}_gen5000_MOP1at5_Dtst`]
+  let urls = [`${domain}${dataset}_gen5000_MOP1at5_Dtra.json`,
+              `${domain}${dataset}_gen5000_MOP1at5_Dtst.json`]
   
   const request  =  async()=>{
     const response1 =  await fetch(urls[0])
