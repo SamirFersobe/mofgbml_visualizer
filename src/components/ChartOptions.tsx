@@ -56,8 +56,8 @@ function compareToMop1(oldData:data,dataset:string,updateFunction:any){
   
 
   const request  =  async()=>{
-    const response1 =  await fetch(urls[0])
-    const response2 =  await fetch(urls[1])
+    const response1 =  await fetch(urls[0],{referrerPolicy: 'no-referrer'})
+    const response2 =  await fetch(urls[1],{referrerPolicy: 'no-referrer'})
     const dataPoints1 = await response1.json()
     const dataPoints2 = await response2.json()
     
@@ -111,8 +111,8 @@ function compareDtra(dataset:string,updateFunction:any,objective:string){
     titles = [`${dataset} MOP1 Test Data`,`${dataset} MOP7 Test Data`]
   }
   const request  =  async()=>{
-    const response1 =  await fetch(urls[0])
-    const response2 =  await fetch(urls[1])
+    const response1 =  await fetch(urls[0],{referrerPolicy: 'no-referrer'})
+    const response2 =  await fetch(urls[1],{referrerPolicy: 'no-referrer'})
     const dataPoints1 = await response1.json()
     const dataPoints2 = await response2.json()
     
@@ -156,8 +156,8 @@ export function preset(dataset:string,updateFunction:any){
               `${domain}${dataset}_gen5000_MOP1at5_Dtst.json`]
   
   const request  =  async()=>{
-    const response1 =  await fetch(urls[0])
-    const response2 =  await fetch(urls[1])
+    const response1 =  await fetch(urls[0],{referrerPolicy: 'no-referrer'})
+    const response2 =  await fetch(urls[1],{referrerPolicy: 'no-referrer'})
     const dataPoints1 = await response1.json()
     const dataPoints2 = await response2.json()
     
